@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d8e38f60e53af9f40a0ef866d70e1b6f
+guid: eeba19695f5688e4f8f121dd681d9e58
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -897594446218527304
-    second: table-sheet_0
+      213: -8897415966259305971
+    second: critter-rat_0
+  - first:
+      213: -396759595602592110
+    second: critter-rat_1
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: table-sheet_0
+      name: critter-rat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 18
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,71 +115,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bdf7c85b9a1b83f0800000000000000
-      internalID: -897594446218527304
+      spriteID: d02a938b157068480800000000000000
+      internalID: -8897415966259305971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table-sheet_1
+      name: critter-rat_1
       rect:
         serializedVersion: 2
-        x: 18
+        x: 16
         y: 0
-        width: 18
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a354eb476e7235a429eb652ed695e0ff
-      internalID: -1428672525
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: table-sheet_2
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 0
-        width: 18
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b499f0cfc9aba7f458f0b5c4a685e80d
-      internalID: -1396418208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: table-sheet_3
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 18
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e825b01326c86564096ffe5dbf1462c6
-      internalID: 1072714559
+      spriteID: 29e31eaff3d6e7af0800000000000000
+      internalID: -396759595602592110
       vertices: []
       indices: 
       edges: []
@@ -184,7 +145,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 659aa6a2170f497439869c3ce48b9024
+    spriteID: 1e3780bb85db8ad449d27c4076342b2a
     internalID: 0
     vertices: []
     indices: 
@@ -192,10 +153,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      table-sheet_0: -897594446218527304
-      table-sheet_1: -1428672525
-      table-sheet_2: -1396418208
-      table-sheet_3: 1072714559
+      critter-rat_0: -8897415966259305971
+      critter-rat_1: -396759595602592110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

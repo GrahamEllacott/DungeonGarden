@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: addfe10ab8aaa854dbdf488c4dcba4bc
+guid: ca6ccb34f23cb12438d27799f656d110
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1056228125319003179
-    second: gardiner 1_0
-  - first:
-      213: 1444393877339919365
-    second: gardiner 1_1
-  - first:
-      213: -1108818561977493464
-    second: gardiner 1_2
-  - first:
-      213: -5312513169140626535
-    second: gardiner 1_3
-  - first:
-      213: 458374726075305667
-    second: gardiner 1_4
+      213: 409439317507458427
+    second: critter-rabbit_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -110,34 +98,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gardiner_0
+      name: critter-rabbit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 27
-        height: 26
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5407a51b866f31941a9570ea6b3fd844
-      internalID: -354644398
+      spriteID: b754c15d3ee9ea500800000000000000
+      internalID: 409439317507458427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gardiner_1
+      name: critter-rabbit_1
       rect:
         serializedVersion: 2
-        x: 27
+        x: 16
         y: 0
-        width: 27
-        height: 26
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,71 +133,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e31d795671e5267468ee0d70daff8550
-      internalID: 2010969362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gardiner_2
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 0
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb5d1e2acc1d9844387cd63f3521577d
-      internalID: -1561770188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gardiner_3
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9bd4aa2aa4ef864da41f2069ab08719
-      internalID: 1570045701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gardiner_4
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 0
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed4f3f927fb7a4c4cb2410fc7093270f
-      internalID: 1922955082
+      spriteID: 3f3d3f3ced3022c47b92c1e8be27827c
+      internalID: -794381135
       vertices: []
       indices: 
       edges: []
@@ -217,7 +142,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7c77f65514902af4a93ddfdfc06958d7
+    spriteID: ee785eac538e2bb49b4fe4ecf7a8d5c3
     internalID: 0
     vertices: []
     indices: 
@@ -225,11 +150,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gardiner_0: -354644398
-      gardiner_1: 2010969362
-      gardiner_2: -1561770188
-      gardiner_3: 1570045701
-      gardiner_4: 1922955082
+      critter-rabbit_0: 409439317507458427
+      critter-rabbit_1: -794381135
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
