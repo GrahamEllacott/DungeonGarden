@@ -73,6 +73,18 @@ public class PlayerController : MonoBehaviour
                 }
             }
             StartCoroutine(WaterSpray());
+
+            // Spray nearby bunnies
+            Collider2D[] allNearby = Physics2D.OverlapCircleAll(
+                transform.position, 1.5f);
+            foreach (Collider2D col in allNearby)
+            {
+                BunnyController bunny = col.GetComponent<BunnyController>();
+                if (bunny != null)
+                {
+                    bunny.GetSprayed();
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.E))
