@@ -57,10 +57,35 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("moveX", moveInput.x);
         animator.SetFloat("moveY", moveInput.y);
 
-        // Water spray on Space
+        // Water spray on Space (this may be redundant now TODO: check)
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(WaterSpray());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isWatering)
+        {
+            // Water nearby plants
+            Collider2D[] nearby = Physics2D.OverlapCircleAll(
+                transform.position, 1.5f);
+            foreach (Collider2D col in nearby)
+            {
+                Plant plant = col.GetComponent<Plant>();
+                if (plant != null) plant.Water();
+            }
+
+            StartCoroutine(WaterSpray());
+        }
+
+
+        // Plant interactions
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TryInteractWithPlant("plant");
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            TryInteractWithPlant("harvest");
         }
     }
 
@@ -96,6 +121,36 @@ public class PlayerController : MonoBehaviour
 
         isWatering = false;
         animator.SetBool("isWatering", false);
+    }
+
+    private void TryInteractWithPlant(string action)
+    {
+        // Detect plants nearby
+        Collider2D[] nearby = Physics2D.OverlapCircleAll(
+            transform.position, 1.5f);
+
+        foreach (Collider2D col in nearby)
+        {
+            Plant plant = col.GetComponent<Plant>();
+            if (plant != null)
+            {
+                if (action == "plant")
+                {
+                    plant.PlantSeed();
+                    // Use a seed
+                    FindObjectOfType<GameManager>().UseSeeds(1);
+                }
+                else if (action == "harvest")
+                {
+                    bool harvested = plant.Harvest();
+                    if (harvested)
+                    {
+                        FindObjectOfType<GameManager>()
+                            .AddMoney(plant.moneyValue);
+                    }
+                }
+            }
+        }
     }
 }
 
