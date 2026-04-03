@@ -4,6 +4,10 @@ using TMPro;
 public class Plant : MonoBehaviour
 {
     public enum PlantState { Empty, Seeded, Sprout, Ripe, Dead }
+    public float warningTime = 8f; // shows warning before death
+    [Header("Death Settings")]
+    public float dehydrationTime = 15f;
+    private float dehydrationTimer = 0f;
 
     [Header("UI")]
     public TextMeshProUGUI statusText;
@@ -41,6 +45,28 @@ public class Plant : MonoBehaviour
                 growTimer = 0f;
             }
         }
+        if (currentState == PlantState.Seeded ||
+    currentState == PlantState.Sprout)
+        {
+            dehydrationTimer += Time.deltaTime;
+
+            // Show warning before death
+            if (dehydrationTimer >= warningTime &&
+                dehydrationTimer < dehydrationTime)
+            {
+                statusText.text = "Needs Water!";
+                statusText.color = new Color(1f, 0.5f, 0f); // orange
+            }
+
+            if (dehydrationTimer >= dehydrationTime)
+            {
+                currentState = PlantState.Dead;
+                isGrowing = false;
+                statusText.text = "Dead";
+                statusText.color = Color.red;
+                UpdateSprite();
+            }
+        }
     }
 
     // Called when player presses E nearby
@@ -63,6 +89,7 @@ public class Plant : MonoBehaviour
         {
             // Watering speeds up growth
             growTimer += 3f;
+            dehydrationTimer = 0f; // reset death timer!
         }
     }
 
@@ -110,7 +137,7 @@ public class Plant : MonoBehaviour
             switch (currentState)
             {
                 case PlantState.Empty:
-                    statusText.text = ""; break;
+                    statusText.text = "Empty"; break;
                 case PlantState.Seeded:
                     statusText.text = "Seeded"; break;
                 case PlantState.Sprout:
@@ -122,6 +149,14 @@ public class Plant : MonoBehaviour
             }
         }
 
+    }
+
+    public void SetNightMode(bool isNight)
+    {
+        if (isNight)
+            statusText.color = new Color(1f, 0.3f, 0.8f); // pink/purple tint
+        else
+            statusText.color = Color.white;
     }
 
     public PlantState GetState() { return currentState; }

@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
         animator = GetComponent<Animator>();
     }
 
@@ -55,15 +56,9 @@ public class PlayerController : MonoBehaviour
         bool isMoving = moveInput.magnitude > 0.1f;
         animator.SetBool("isMoving", isMoving);
         animator.SetFloat("moveX", moveInput.x);
-        animator.SetFloat("moveY", moveInput.y);
 
         // Water spray on Space (this may be redundant now TODO: check)
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(WaterSpray());
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && !isWatering)
         {
             // Water nearby plants
             Collider2D[] nearby = Physics2D.OverlapCircleAll(
@@ -71,11 +66,20 @@ public class PlayerController : MonoBehaviour
             foreach (Collider2D col in nearby)
             {
                 Plant plant = col.GetComponent<Plant>();
-                if (plant != null) plant.Water();
+                if (plant != null)
+                {
+                    plant.Water();
+                    Debug.Log("Watered plant!");
+                }
             }
-
             StartCoroutine(WaterSpray());
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+            TryInteractWithPlant("plant");
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            TryInteractWithPlant("harvest");
 
 
         // Plant interactions

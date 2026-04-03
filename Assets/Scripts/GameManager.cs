@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,6 +42,12 @@ public class GameManager : MonoBehaviour
         // Make sure panels are hidden at start
         winPanel.SetActive(false);
         losePanel.SetActive(false);
+
+        // Set day colours on start
+        moneyText.color = Color.black;
+        timerText.color = Color.black;
+        seedsText.color = Color.black;
+        phaseText.color = Color.black;
     }
 
     void Update()
@@ -63,15 +70,44 @@ public class GameManager : MonoBehaviour
         UpdateHUD();
     }
 
+    [Header("HUD Images")]
+    public Image moneyBackground;
+    public Image timerBackground;
+    public Image seedsBackground;
+    public Image phaseBackground;
+
     void SwitchToNight()
     {
         isDay = false;
         timeRemaining = nightDuration;
         dayBackground.SetActive(false);
         nightBackground.SetActive(true);
+
+        // Update phase text
         phaseText.text = "NIGHT";
-        phaseText.color = new Color(0.6f, 0.4f, 1f); // purple
+        phaseText.color = new Color(0.8f, 0.6f, 1f); // purple
+
+        // Update other text to night colours
+        moneyText.color = new Color(0.0f, 0.6f, 0.2f);
+        timerText.color = new Color(0.0f, 0.6f, 0.2f);
+        seedsText.color = new Color(0.0f, 0.6f, 0.2f);
+        phaseText.color = new Color(0.0f, 0.6f, 0.2f);
+
+        // Update background pill colours
+        moneyBackground.color = new Color(0.2f, 0.1f, 0.3f, 0.8f);
+        timerBackground.color = new Color(0.2f, 0.1f, 0.3f, 0.8f);
+        seedsBackground.color = new Color(0.2f, 0.1f, 0.3f, 0.8f);
+        phaseBackground.color = new Color(0.2f, 0.1f, 0.3f, 0.8f);
+
+        // Find all plants and switch them to night mode
+        Plant[] plants = FindObjectsOfType<Plant>();
+        foreach (Plant plant in plants)
+        {
+            plant.SetNightMode(true);
+        }
     }
+
+
 
     void EndGame()
     {
