@@ -105,6 +105,28 @@ public class Plant : MonoBehaviour
         }
         return false;
     }
+    public void GetEaten()
+    {
+        StartCoroutine(EatenSequence());
+    }
+
+    private System.Collections.IEnumerator EatenSequence()
+    {
+        // Show eaten message briefly
+        statusText.text = "Eaten!";
+        statusText.color = new Color(1f, 0.5f, 0f);
+
+        yield return new WaitForSeconds(2f);
+
+        // Reset back to empty so player can replant
+        currentState = PlantState.Empty;
+        isGrowing = false;
+        dehydrationTimer = 0f;
+        growTimer = 0f;
+        statusText.text = "Empty";
+        UpdateSprite();
+    }
+
 
     void AdvanceGrowth()
     {

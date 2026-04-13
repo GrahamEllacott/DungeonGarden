@@ -16,6 +16,12 @@ public class BunnyController : MonoBehaviour
     private Transform targetPlant;
     private SpriteRenderer sr;
 
+    [Header("Settings")]
+    public float damageRadius = 0.5f;
+    private bool isEating = false;
+
+    public event System.Action OnBunnyDestroyed;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -36,6 +42,20 @@ public class BunnyController : MonoBehaviour
             targetPlant = null;
             return;
         }
+
+        float distanceToPlant = Vector2.Distance(
+       transform.position, targetPlant.position);
+
+        // If close enough, start eating
+        if (distanceToPlant < damageRadius)
+        {
+            if (!isEating)
+            {
+                StartCoroutine(EatPlant());
+            }
+            return;
+        }
+
 
         // Move toward target plant
         Vector2 direction = (targetPlant.position -
@@ -81,6 +101,25 @@ public class BunnyController : MonoBehaviour
         }
     }
 
+    private IEnumerator EatPlant()
+    {
+        isEating = true;
+        yield return new WaitForSeconds(2f); // takes 2 seconds to eat
+
+        if (targetPlant != null)
+        {
+            Plant plant = targetPlant.GetComponent<Plant>();
+            if (plant != null)
+            {
+                plant.GetEaten(); // destroy the plant
+            }
+        }
+
+        targetPlant = null;
+        isEating = false;
+        FindNearestPlant(); // find next target
+    }
+
     // Called when player sprays the bunny
     public void GetSprayed()
     {
@@ -104,6 +143,7 @@ public class BunnyController : MonoBehaviour
             yield return null;
         }
 
+        OnBunnyDestroyed?.Invoke();
         Destroy(gameObject);
     }
 }
