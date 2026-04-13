@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     [Header("UI Panels")]
     public GameObject winPanel;
     public GameObject losePanel;
-    public GameObject resultsPanel;
+    //public GameObject resultsPanel;
 
     public TextMeshProUGUI seedsPlantedText;
     public TextMeshProUGUI moneyEarnedText;
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         {
             losePanel.SetActive(true);
         }
-        resultsPanel.SetActive(true);
+        //resultsPanel.SetActive(true);
     }
 
     void UpdateHUD()
@@ -136,9 +136,11 @@ public class GameManager : MonoBehaviour
         seedsText.text = "Seeds: " + seeds;
         phaseText.text = isDay ? "DAY" : "NIGHT";
 
-        seedsPlantedText.text = "Seeds Planted: " + seedsPlanted.ToString();
-        moneyEarnedText.text = "Money Earned: $" + money.ToString("F2");
-	}
+        if (seedsPlantedText != null)
+            seedsPlantedText.text = "Seeds Planted: " + seedsPlanted.ToString();
+        if (moneyEarnedText != null)
+            moneyEarnedText.text = "Money Earned: $" + money.ToString("F2");
+    }
 
     // Call this from other scripts when player earns money
     public void AddMoney(float amount)
