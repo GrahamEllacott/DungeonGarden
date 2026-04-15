@@ -7,28 +7,41 @@ public class PauseMenu : MonoBehaviour
 {
     public bool isPaused = false;
     public GameObject canvas;
+    public GameObject helpMenu;
+
+    bool helpIsOpen = false;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (helpIsOpen)
             {
-                Resume();
+                CloseHelp();
             }
             else
             {
-                Pause();
+                if (isPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }
 
     public void Resume()
     {
-        canvas.SetActive(false);
-        isPaused = false;
-        Time.timeScale = 1f;
+        if (!helpIsOpen)
+		{
+			canvas.SetActive(false);
+			isPaused = false;
+			Time.timeScale = 1f;
+		}
     }
 
 	void Pause()
@@ -38,13 +51,23 @@ public class PauseMenu : MonoBehaviour
 		Time.timeScale = 0f;
 	}
 
-    public void Help()
+    public void OpenHelp()
     {
+        helpMenu.SetActive(true);
+        helpIsOpen = true;
+    }
 
+    public void CloseHelp()
+    {
+        helpMenu.SetActive(false);
+        helpIsOpen = false;
     }
 
     public void Quit()
     {
-		SceneManager.LoadScene("Menu");
+        if (!helpIsOpen)
+		{
+			SceneManager.LoadScene("Menu");
+		}
 	}
 }
