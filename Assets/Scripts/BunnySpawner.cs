@@ -4,7 +4,7 @@ using UnityEngine;
 public class BunnySpawner : MonoBehaviour
 {
     [Header("Spawning")]
-    public GameObject bunnyPrefab;
+    public GameObject[] bunnyPrefabs;
     public float spawnInterval = 10f;
     public int maxBunnies = 3;
 
@@ -37,8 +37,11 @@ public class BunnySpawner : MonoBehaviour
         Transform spawnPoint = spawnPoints[
             Random.Range(0, spawnPoints.Length)];
 
-        GameObject bunny = Instantiate(
-            bunnyPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject prefab = bunnyPrefabs[
+			Random.Range(0, bunnyPrefabs.Length)];
+
+		GameObject bunny = Instantiate(
+            prefab, spawnPoint.position, Quaternion.identity);
 
         currentBunnies++;
 

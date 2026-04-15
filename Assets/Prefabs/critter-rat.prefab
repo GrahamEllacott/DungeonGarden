@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5895305270613439299}
   - component: {fileID: 3010532798618030935}
   m_Layer: 0
-  m_Name: critter-rabbit_0
+  m_Name: critter-rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 409439317507458427, guid: ca6ccb34f23cb12438d27799f656d110, type: 3}
+  m_Sprite: {fileID: -8897415966259305971, guid: eeba19695f5688e4f8f121dd681d9e58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +115,7 @@ Animator:
   m_GameObject: {fileID: 7130474524733022514}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96637711b61368d4ca2bb2fab5083a86, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a4915832ffdb3048bb9daf8262ef954, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
