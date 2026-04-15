@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateHUD()
     {
-        moneyText.text = "$" + money.ToString("F2");
+        moneyText.text = "$" + money.ToString("F2") + " / $" + moneyRequired.ToString("F2");
         timerText.text = Mathf.CeilToInt(timeRemaining).ToString();
         seedsText.text = "Seeds: " + seeds;
         phaseText.text = isDay ? "DAY" : "NIGHT";
@@ -163,4 +163,20 @@ public class GameManager : MonoBehaviour
     {
         return seeds >= amount;
     }
+
+
+	public void TryAgain()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
+
+	public void Level3()
+	{
+		SceneManager.LoadScene("Level 3");
+	}
 }
