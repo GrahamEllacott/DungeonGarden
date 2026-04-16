@@ -25,8 +25,9 @@ public class MenuManager : MonoBehaviour
 	{
 		if (!helpIsOpen && !aboutIsOpen)
 		{
-			SceneManager.LoadScene("Level 1");
-		}
+            //SceneManager.LoadScene("Level 1");
+            SceneManager.LoadScene("CharacterSelect");
+        }
 	}
 
 	public void Quit()

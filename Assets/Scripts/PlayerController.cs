@@ -23,6 +23,18 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         animator = GetComponent<Animator>();
+
+
+        int selectedChar = PlayerPrefs.GetInt("SelectedCharacter", 0);
+
+        // Load the correct sprite sheet based on selection
+        CharacterData characterData = FindObjectOfType<CharacterData>();
+        if (characterData != null)
+        {
+            animator.runtimeAnimatorController =
+                characterData.characterAnimators[selectedChar];
+        }
+        Debug.Log("Selected character index: " + selectedChar);
     }
 
 	// Update is called once per frame

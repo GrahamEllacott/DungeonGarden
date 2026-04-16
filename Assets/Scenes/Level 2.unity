@@ -582,8 +582,8 @@ Camera:
   m_GameObject: {fileID: 294043119}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1758,6 +1758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Help
       objectReference: {fileID: 0}
+    - target: {fileID: 2886747239351208374, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1768,19 +1772,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1820,11 +1824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 551
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 326
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5085045264976489291, guid: 366c545563ad30e4c8e5ac9f7e188c5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
